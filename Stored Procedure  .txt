@@ -1,0 +1,78 @@
+ Registering a PL/SQL Stored Procedure in Oracle EBS
+
+CREATE OR REPLACE PROCEDURE RAZAN_PR_TEST IS --- DB PROCEDURE ---
+BEGIN
+DBMS_OUTPUT.PUT_LINE(‘ WELCOME TO ORACLE EBS PROC..!’);
+END;
+/
+----------------------------------- ORACLE EBS ---PROCEDURE------------
+1. MANDATORY PARAMETERS
+   a. ERRBUF OUT VARCHAR2
+   b. RETCODE OUT NUMBER
+
+2. FND_FILE.PUT_LINE(FND_OUTPUT, ‘ ORACLE EBS PROCEDURE !!’);
+
+CREATE OR REPLACE PROCEDURE RAZAN_PR_EBS(ERRBUF OUT VARCHAR2,
+RETCODE OUT NUMBER) IS
+BEGIN
+FND_FILE.PUT_LINE(FND_FILE.OUTPUT, ‘ WELCOME TO ORACLE EBS PROC..!’);
+END;
+/
+Procedure Created
+-------------------------------
+REGISTER THIS PROCEDURE IN ORACLE EBS
+
+1. APPLICATION DEVELOPER • RESPONSIBILITY
+a. CONCURRENT • MENU
+i. EXECUTABLE • FUNCTION
+Name: RAZAN_PR_EBS
+Short Name: RAZAN_PR_EBS
+Execution Method: PL/SQL Stored Procedure
+Execution File Name: RAZAN_PR_EBS
+<SAVE>
+View > Query by example > Enter
+Name: RAZAN_PR_EBS
+View > Query by example > Run
+YOU CAN SEE YOUR PROCEDURE DETAILS
+ii. CONCURRENT PROGRAM • FUNCTION
+Name: RAZAN_PR_EBS
+Short Name: RAZAN_PR_EBS
+Application: AOL 
+Executable: RAZAN_PR_EBS
+Output: HTML
+<SAVE>
+
+2.REQUEST GROUP • Collection of Programs and Reports
+>System Administrator • Responsibility
+>Security
+>Responsibility
+>Request
+Name: RAZAN_RG_PGMS
+Application: APPL 
+Program: RAZAN_PR_EBS
+<SAVE>
+
+
+3.CREATE A NEW USER RESPONSIBILITY • RAZAN_RESP_MUSCAT
+➢ ATTACH THE REQUEST GROUP TO THIS RESPONSIBILITY
+➢ ASSIGN THE RESPONSIBILITY TO ONE OR MORE USERS
+o RAZAN_RESP_MUSCAT
+>System Administrator
+>Security
+>Responsibility
+>Define
+<SAVE>
+
+
+
+
+4.TO EXECUTE A PROCEDURE USING THE RESPONSIBILITY
+>Switch to the RESPONSIBILITY you want to execute
+>RAZAN_RESP_MUSCAT
+>View > Request
+>Submit a New Request >Single (Default) >OK
+>CLICK THE LOV ⇨ To select a Program
+>RAZAN_PR_EBS • Submit
+>Refresh Data • Pending
+> Completed
+>View Output
