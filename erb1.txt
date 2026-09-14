@@ -1,0 +1,106 @@
+1.Log in with a System Administrator or User Management responsibility.
+2.Go to Security > User > Define.
+3.Enter a unique User Name.
+4.Set a temporary Password (user will be forced to change it on first login).
+
+
+-------------------------------------------
+Create canvas and data block in the form builder
+
+Create a Canvas:
+
+1.Open Form Builder and open your form module (or create a new one).
+2.In the Object Navigator, expand the Windows node — a default window (WINDOW1) usually exists, or create one first (right-click > Create).
+3.Right-click on Canvases node > Create.
+4.In the Canvas property palette, set:
+Name — give it a meaningful name (e.g., CANVAS_EMP)
+Window — assign it to the window created above
+Canvas Type — usually "Content" (default), or Stacked/Tab/Toolbar depending on need
+Viewport dimensions (width/height) as needed
+
+Create a Data Block (using the Data Block Wizard — most common way):
+
+1.In Object Navigator, right-click Data Blocks > Data Block Wizard.
+2.Choose data source:
+Table or View (most common) — select the table, then pick the columns to include
+Or Stored Procedure if pulling from a PL/SQL API
+Click Next, select the base table (use the "Browse" button if unsure of the name), and choose which columns become items on the block.
+Set the Master-Detail relation if this block is a child of another block (optional).
+On the last screen, choose to launch the Layout Wizard immediately (recommended) — this lets you place the block's items onto the canvas you just created.
+
+In the Layout Wizard:
+
+Choose the Canvas you created earlier as the target.
+Select which items to display, arrange them (form-style or tabular).
+Set frame title, item labels, and number of records displayed (for tabular).
+Finish — Forms Builder generates the items and places them on the canvas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------
+SQL> CREATE OR REPLACE PROCEDURE RAZAN_PR_TEST IS
+  2  BEGIN
+  3  DBMS_OUTPUT.PUT_LINE('WELCOME TO ORACLE EBS...!!!');
+  4  END;
+  5  /
+
+SQL> BEGIN
+  2  RAZAN_PR_TEST;
+  3  END;
+  4  /
+
+PL/SQL procedure successfully completed.
+
+SQL> SET SERVEROUTPUT ON;
+SQL>  BEGIN
+  2   RAZAN_PR_TEST;
+  3   MARIYA_PR_TEST;
+  4   TIBYAN_PR_TEST;
+  5   END;
+  6  /
+WELCOME TO ORACLE EBS...!!!
+WELCOME TO ORACLE EBS PROCEDURE!
+WELCOME TO ORACLE EBS PROC....!!!!
+
+PL/SQL procedure successfully completed.
+
+SQL> CREATE OR REPLACE FUNCTION RAZAN_FN_TEST RETURN VARCHAR2 IS
+  2  V_MSG VARCHAR2(2000);
+  3  BEGIN
+  4  V_MSG:='WELCOME TO ORACLE EBS FUNCTIONS...!!!';
+  5  RETURN V_MSG;
+  6  END;
+  7  /
+
+Function created.
+
+SQL> DECLARE
+  2  X VARCHAR2(2000);
+  3  BEGIN
+  4  RAZAN_PR_TEST;
+  5  X:=RAZAN_FN_TEST;
+  6  END;
+  7  /
+WELCOME TO ORACLE EBS...!!!
+
+PL/SQL procedure successfully completed.
+
+SQL> CREATE OR REPLACE PROCEDURE RAZAN_PR_EBS(ERRBUF OUT VARCHAR2 , RETCODE OUT NUMBER) IS
+  2  BEGIN
+  3  FND_FILE.PUT_LINE(FND_FILE.OUTPUT,'WELCOME TO ORACLE EBS PROC..!!');
+  4  END;
+  5  /
+
+Procedure created.
+
+SQL> 
