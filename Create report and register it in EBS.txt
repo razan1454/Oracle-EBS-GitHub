@@ -1,0 +1,27 @@
+Steps to create a report and register it in EBS:
+
+1.Build the report in Oracle Reports Builder (.rdf file).
+
+2.Copy the compiled .rdf file to the EBS server.
+
+3.Go to 
+Application Developer > 
+Concurrent > Executable.
+ Register it — give a Short Name, pick your Application, set Execution Method = RAZAN_PR , and enter the file name .
+
+4.Go to Application Developer 
+> Concurrent >
+ Program.
+ Create the program, link it to the Executable.
+
+5.If the report has parameters, click Parameters on the Program form and define each one to match your report's bind variables.
+
+Go to System Administrator >
+ Security > 
+Responsibility > 
+Request > 
+Group, find the group tied to your responsibility, and add your new program to it.
+Log in with that responsibility, go to View
+ > Requests 
+> Submit a New Request, 
+select your report, enter parameters, and run it to confirm output.
