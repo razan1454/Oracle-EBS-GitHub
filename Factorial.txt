@@ -1,0 +1,29 @@
+SQL> DECLARE
+  2      v_num       NUMBER := 5;
+  3      v_factorial NUMBER := 1;
+  4  BEGIN
+  5      IF v_num < 0 THEN
+  6          RAISE_APPLICATION_ERROR(-20001, 'Factorial not defined for negative numbers');
+  7      END IF;
+  8  
+  9      FOR i IN 1 .. v_num LOOP
+ 10          v_factorial := v_factorial * i;
+ 11      END LOOP;
+ 12  
+ 13      DBMS_OUTPUT.PUT_LINE('Factorial of ' || v_num || ' = ' || v_factorial);
+ 14  
+ 15  EXCEPTION
+ 16      WHEN VALUE_ERROR THEN
+ 17          DBMS_OUTPUT.PUT_LINE('Error: Invalid numeric value.');
+ 18      WHEN ZERO_DIVIDE THEN
+ 19          DBMS_OUTPUT.PUT_LINE('Error: Division by zero encountered.');
+ 20      WHEN OTHERS THEN
+ 21          DBMS_OUTPUT.PUT_LINE('Error: ' || SQLCODE || ' - ' || SQLERRM);
+ 22  END;
+ 23  /
+Factorial of 5 = 120
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> 
