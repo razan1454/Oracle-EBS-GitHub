@@ -1,0 +1,25 @@
+1.Build the report in Reports Builder (.rdf) — add bind parameters in the query .
+
+2.Copy the compiled .rdf to the EBC server.
+
+3.Application Developer > 
+Concurrent > 
+Executable — register it (Short Name, Application, Execution Method = "RAZAPARAMETERREPORT", File Name = .rdf name without extension).
+
+4.Application Developer > 
+Concurrent > 
+Program — create the program, link it to the Executable.
+
+5.Click Parameters on the Program form.
+ 
+6.Save, then go to 
+System Administrator > 
+Security >
+ Responsibility > 
+Request >
+ Group, and add your program to the relevant request group.
+
+7.Run it: View >
+ Requests > 
+Submit a New Request, 
+select the report, fill in the parameter fields, submit, and check output.
