@@ -1,0 +1,23 @@
+
+1. Developed a FORM USING ORACLE FORMS BUILDER
+2. SAVE .fmb COMPILE .fmx
+3. Move .fmx TO EBS Server ⇨ fnd/forms/US
+/u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
+⇨ RAZANEmp.fmx
+⇨ RAZANMasterDetailForm.fmx
+4. Login to EBS RAZAN/welcome
+5. Application Developer
+a. Application > FORM
+b. Application > FUNCTION
+c. Application > MENU • RAZANFORM_MENU
+6. Create a New RESPONSIBILITY • User defined Responsibility
++Attach the MENU to this New RESPONSIBILITY
+System Administrator
+Security
+Responsibility
+Define • RAZAN_FORMS_RESP
+ASSIGN the New RESPONSIBILITY to 1 or more USERS
+➢ NAVIGATE
+o TO THE NEW RESPONSIBILITY • RAZAN_FORMS_RESP
+▪ MENU • RAZANFORM_MENU
+• FUNCTION • RAZANEmp
