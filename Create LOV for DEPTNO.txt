@@ -1,0 +1,51 @@
+1. Open Form Builder
+a. Open your existing form → go to the Canvas
+b. Expand Data Blocks → select block EMP
+c. Right-click DEPTNO item → this will have the LOV attached to it
+
+2. Create the Record Group (RG) first
+a. Right-click Record Groups node in Object Navigator → New → New Record Group from Query
+b. Write the query:
+
+sql
+      SELECT DEPTNO, DNAME, LOC FROM DEPT
+
+c. Name it  RAZAN_LOV
+
+3. Create the LOV
+a. Right-click LOVs node → New → LOV Wizard opens
+b. Choose New Record Group or select the RAZAN_LOV
+ you already created (this is your "LOV ⇨ Data from RECORD GROUP")
+c. Select columns to display (DEPTNO, DNAME, LOC)
+d. Map Return Item → set DEPTNO column to return into EMP.DEPTNO
+e. Set LOV Column Mapping (Display Width, Title, etc.)
+f. Finish wizard → LOV gets created (EMP_DEPTNO)
+
+4. Attach LOV to the item
+a. Select DEPTNO item in EMP block → Properties Palette
+b. Set property List of Values (LOV) → EMP_DEPTNO
+c. Set List of Values → Automatic Display = Yes (optional, so LOV pops up automatically on field entry)
+d. Optionally set Validate from List = Yes
+
+5. SAVE
+
+Save the .fmb file
+
+6. COMPILE
+
+Compile the form → generates .fmx
+Fix any compilation errors before proceeding
+
+7. Register the Form in EBS
+a. Move .fmx to Oracle EBS Server using WinSCP
+b. Application Developer Responsibility
+i. Application → Form → Create a new Form record (Name= RAZAN_LOV
+, User Form Name= RAZAN_LOV
+, Application=AOL)
+ii. Application → Function → Create a new Form Function pointing to the Form Name created above =RAZAN_LOV
+
+iii. Application → Menu → Query your responsibility's menu → Attach the new Function to it
+c. Switch to your target Responsibility 
+i. Open the Menu → Runtime form for EMP 
+ii. Insert / Update / Delete records in EMP using the LOV on DEPTNO
+iii. Save
