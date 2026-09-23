@@ -1,0 +1,23 @@
+1.Create the Independent Value Set
+Application Developer > Validation > Value Sets in EBS
+
+2.Add values to the independent set
+ Add each value with a code and description — e.g. codes like SALES, FINANCE, IT.
+
+3.Create the first Dependent Value Set
+Create a new value set (e.g. SUB_DEPT_1), set Validation Type to 'Dependent', and select the Independent Value Set you just created (DEPARTMENT) as its parent. Set format and length as needed.
+
+4.Add values mapped to the independent set
+ For each independent value (SALES, FINANCE, IT), add the specific child values
+
+5.Create the second Dependent Value Set
+Create another value set (e.g. SUB_DEPT_2), again set Validation Type to 'Dependent', and point it to the SAME Independent Value Set (DEPARTMENT) as its parent.
+
+6.Add values mapped to the independent set
+set is separate from the first dependent set and can hold a completely different list of children per parent value.
+
+7.Assign the value sets to segments
+assign the independent value set to one segment, and assign each dependent value set to its own separate segment.
+
+8.Compile and test
+Save and compile
