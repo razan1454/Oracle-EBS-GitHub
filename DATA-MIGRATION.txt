@@ -1,0 +1,115 @@
+
+SQL*Loader – Run Data Migration on EBS Linux Server
+1. Tried to run SQL*Loader
+Initially, I tried to run:
+
+sqlldr
+But received:
+
+-bash: sqlldr: command not found
+This means SQL*Loader was installed on the server but its location was not included in the current PATH.
+
+2. Checked whether SQL*Loader was available in PATH
+
+which sqlldr
+Result:
+
+/usr/bin/which: no sqlldr in (...)
+So I searched for the SQL*Loader executable:
+
+find /u01 -type f -name sqlldr 2>/dev/null
+It returned multiple SQL*Loader executables, including one under the Oracle Database Home:
+
+/u01/install/VISION/11.2.0/bin/sqlldr
+
+3. First attempted to run the EBS SQL*Loader executable
+I tried the SQL*Loader executable under the EBS fs1 environment.
+It returned:
+
+Message 2100 not found
+No message file for product=RDBMS, facility=UL
+This indicated that the required Oracle environment was not configured correctly for the current shell.
+
+4. Set the Oracle Database Environment
+I configured the Oracle Database Home:
+
+export ORACLE_HOME=/u01/install/VISION/11.2.0
+Added the Oracle binaries to PATH:
+
+export PATH=$ORACLE_HOME/bin:$PATH
+Set the Oracle library path:
+
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
+Then:
+
+which sqlldr
+Now SQL*Loader pointed to the Database Oracle Home.
+Running:
+
+sqlldr
+displayed the SQL*Loader help successfully.
+
+5. Tried Connecting Using EBSDB
+When SQL*Loader was run using the EBSDB TNS alias, it returned:
+
+ORA-12545: Connect failed because target host or object does not exist
+I tested the TNS connection:
+
+tnsping EBSDB
+The alias was resolving, but it was attempting to connect to a host that was not reachable from the server.
+Therefore, instead of using the TNS alias, I configured a local database connection.
+
+6. Checked ORACLE_SID
+First:
+
+echo $ORACLE_SID
+The result was empty.
+I checked the running Oracle database instance:
+
+ps -ef | grep pmon | grep -v grep
+The result contained:
+
+ora_pmon_EBSDB
+Therefore, the Oracle SID was:
+
+EBSDB
+I configured it:
+
+export ORACLE_SID=EBSDB
+And verified it:
+
+echo $ORACLE_SID
+Result:
+
+EBSDB
+
+7. Ran SQL*Loader Using the Local Database Connection
+I then ran SQL*Loader without @EBSDB:
+
+sqlldr apps/<password> control=/path/to/RIMACONTROL.ctl
+This successfully connected to the local database, but SQL*Loader returned:
+
+SQL*Loader-601: For INSERT option, table must be empty.
+Error on table RIMA_TEST
+This happened because RIMA_TEST already contained records and SQL*Loader uses the INSERT option by default.
+
+8. Updated the Control File
+The control file was updated to use TRUNCATE:
+
+LOAD DATA
+INFILE '/path/to/RAZANDATA.dat'
+TRUNCATE
+INTO TABLE RAZAN_TEST
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+(
+    ID,
+    NAME,
+    COURSE
+)
+TRUNCATE removes the existing records from the target table before loading the new data.
+
+9. Ran SQL*Loader Again
+Finally:
+
+sqlldr apps/<password> control=/path/to/RAZANCONTROL.ctl
