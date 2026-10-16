@@ -1,0 +1,12 @@
+1.Open the Security Console. Sign in, then go to Navigator → Tools → Security Console.
+2.Go to Users. Click the Users tab, then click Add User Account.
+3.Enter user details. Fill in:
+  - Last Name and First Name:
+  -password :
+
+4.Add roles. In the Roles section, click Add Role, search for the role (for example Accounts Payable Specialist or Procurement Buyer), select it, and click Add Role Membership.
+
+5.Save the user. Click Save and Close. Oracle creates the account and emails the user a password-setup link.
+
+6.Verify the roles. Search for the user on the Users tab, open the account, and confirm the roles are listed under the Roles tab.
+
