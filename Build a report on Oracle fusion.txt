@@ -1,0 +1,16 @@
+
+1.Open the report builder. Sign in to Oracle Fusion, then go to Navigator → Tools → Reports and Analytics (or Navigator → Tools → Analyses, depending on your version).
+
+2.Create a new analysis. Click the Browse Catalog icon, then Create → Analysis. Pick the subject area that matches your data, for example Payables Invoices, Purchase Orders, or Workforce Management.
+
+3.Select your columns. Expand the folders in the subject area and double-click the fields you want, such as Supplier Name, Invoice Number, or Amount.
+
+4.Add filters. Click the Criteria tab, then the filter icon on a column. Set conditions like Date is in the last 30 days or Status = Approved.
+
+5.Review the results. Click the Results tab to preview the data. Here you can sort columns, rename headings, and add totals.
+
+6.Add a view (optional). Click New View to add a table, pivot table, or chart. Arrange them in the Compound Layout.
+
+7.Save the report. Click Save, choose a folder under My Folders.
+
+8.Run and share it. Open the saved report from the catalog to run it. You can export to Excel, PDF, or CSV, and use the Schedule option in BI Publisher if you need it emailed regularly.
