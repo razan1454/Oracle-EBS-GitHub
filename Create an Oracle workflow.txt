@@ -1,0 +1,40 @@
+1. file -----> Quick Starts Wizard
+   -internal name : razan _wf 
+   -Display name : razan _wf
+   
+    new process
+    -internal name : razan _proc
+    -Display name : razan _proc
+-> when process end i want notification "message " 
+
+
+2.Rt'click'  message -----> new message 
+3.Navigator control properties :
+   -internal name : razan_msg 
+   -display name : razan_msg 
+->move to body (tab) then write message 
+------>click  (apply)-------->ok 
+
+->attack this message to notification 
+
+4.Rt'click' Notifi -----> new notify
+    -internal name : razan_notif
+    -display name : razan_notif 
+    -"Message : razan_msg "
+-then apply-------> ok 
+
+5.drag the icone message between sart and end .
+6.lef'cli' then right to make connection between start and end.
+7. (node tab )----->  Rt'cli' razan_notif then properties value : (RAZAN) the username .
+
+
+8.then save as and choose database 
+9.open Oracle EBS login as (SYSADMIN) / welcome 
+10.open responsibilities -------> oracle wor kflow
+11.Develop Studio -------Enter Keys (each time enter unique) -------> then submit .
+
+12. go to status Moniter check should come (tick correct).
+13.then login by use my user (RAZAN) and you will see the message .
+
+
+    
