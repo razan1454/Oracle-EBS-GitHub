@@ -1,0 +1,15 @@
+1.Open BI Publisher. Go to Navigator → Tools → Reports and Analytics, then click Browse Catalog.
+
+2.Create a data model. Click Create → Data Model.
+
+3.Add the spreadsheet as a data set. Click Data Sets → New Data Set → Microsoft Excel. Give it a name, then upload your file.
+
+4.Select the sheet and headers. Choose the worksheet, tick the option for the first row being headers, and confirm the column data types (text, number, date).
+
+5. save the data model.
+
+6.Create the report. Click Create → Report, choose Use Data Model, and select the data model you just saved.
+
+7.Design the layout. Choose a layout type (Table, Chart, or Pivot Table).
+
+8.Save and run. Save the report, then click View to run it. You can export to Excel, PDF, or CSV, or use Schedule to email it regularly.
