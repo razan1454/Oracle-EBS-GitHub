@@ -1,0 +1,19 @@
+1.Open the analysis builder. Go to Navigator → Tools → Reports and Analytics, then click Browse Catalog.
+
+2.Create a new analysis. Click Create → Analysis.
+
+3.Choose the subject area. Select the one that matches your data, such as Payables Invoices - Transactions Real Time, Purchasing - Purchase Orders Real Time, or Workforce Management - Worker Assignment Real Time.
+
+4.Select columns. Expand the folders and double-click the fields you want. Each folder is a dimension (like Supplier or Business Unit) or a fact folder holding the numbers (like Invoice Amount).
+
+5.Add filters. Hover over a column in the Criteria tab, click More Options → Filter, and set conditions such as Invoice Date is in the last 30 days or Status = Validated.
+
+6.Preview the results. Click the Results tab, then sort, rename headings, and add totals as needed.
+
+7.Add views (optional). Click New View to add a chart, pivot table, or graph, then arrange them in the Compound Layout.
+
+8.Add prompts (optional). Click New View → Filters → Prompts → Column Prompt so users can pick values (like date or business unit) when they run the report.
+
+9.Save the report. Click Save, choose My Folders or Shared Folders, and name it.
+
+10.Run and share. Open it from the catalog to run it, then export to Excel, PDF, or CSV from the Export option.
