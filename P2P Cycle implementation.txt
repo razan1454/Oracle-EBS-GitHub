@@ -1,0 +1,165 @@
+1.Assign responsibilities:
+     -Inventory , vision op (USA)
+     -Purchasing , vision op (USA)
+     -Payable , vision op (USA)
+     -General Ledger , vision op (USA)
+
+
+2. Add a person : Stack , Ms.Pat
+
+3.Add Items
+    Inventory ------> Item ------> Master items
+     -v1%
+     -item :XX_
+     -Desc: 
+
+tab------> Tools-------->Copy form
+          template: finished goods
+          Apply------> done 
+
+tab------> purchasing ----->List Price : 100
+<save>
+
+4.Inventory ----> transactions --->Misc tran      (adding stock)
+type : misc recipt
+      <transaction lines>
+
+    -item :
+    -subir:Stores
+    -UOM: EA
+    -Qaunt : how much is available 
+    -Account : account Alias : Emp Exp
+ <save>
+
+
+5.Inventory ---> on-hand-availability
+                -on-hand-quantity
+                  a.v%    <tab>
+                  b.item : xx_
+                  c.find    <availability>
+
+6.Purcahce ------> Req ------>Req      (Create Request)
+              -click Num
+              -item: xx_
+              -Quant: how much need
+              -Need By:
+              -Location :Auck%
+              -Subin: Stores
+              -Source:Supplier
+              -Supplier:Abbo%
+              -Site:Corb
+              <save>
+Note number:
+Approve --->print --------> ok 
+
+7.Purchase -----------> Req -------->Req sum    (to check for details)
+number.........
+
+
+8.Purc----->RFQ ------->RFQs
+          Type: Standard RFQ
+          Ship to : Auck%
+          Close date:
+          item : xx_
+
+         <price breaks>
+         Qaunt:
+         org: v1
+         <save>
+ Note number ..........
+
+          <suppliers>
+         Suppliers : abbot%
+          <save>
+
+      Tools --------->Copy Document 
+                    1. Action : Entire RFQ
+                    2.Type: Standard Qut
+                    3. Supplier : Abbot%
+              <save>   ------> ok
+Note number........
+
+
+9.Purchase ------purchase Order ------->purchase Order 
+                  -supplier: Abbot%
+                  -ship to : Auck%
+                  -item : xx_                 (tab)
+                  -Qaunt :
+                  - promise :
+                  - Need by : 
+                <save>
+Note number ...............
+            <Approve --------> print --------> ok 
+
+
+           
+ 10. purch---------> receiving ------> receipt 
+        -v1 Operation 
+        -Purchase Order : 
+        <Find>
+
+Comment : XX_ 
+        <save>
+Note number ...........
+
+
+11.Pay------> invoices ------> entry ------> invoices
+            - Po number :
+            - invoices Date :
+            - "     Num :RAZIN001
+            - "   amount : 200   (total)
+            - Payment method : check 
+
+
+   <2 lines>
+    -amount : 200 (total)
+    -po line : 1 
+    - " shipment : 1
+
+  <Action ..1>
+   -validation .....<ok>
+
+   < 3 HOLD >
+    ------------>Release......1
+    -Release Name:   <click LOV>
+     - ok 
+
+-general tab , suit it is validation 
+
+  <Action ....1>
+  Create Accounting----------->Final post
+  <ok> --------> save 
+
+  <Action .....1>
+  pay in fall -------> ok ------> save 
+
+
+
+12. payab---------> payments -----> Entry ----> Payments 
+        -Type : Manual 
+        -Trading partner : Abbot%
+        - payment Date :
+        - Bank account : BofA-204
+        - payment proc profile : check USD   ( choose 3 option )
+
+< click blue box or left top corner >
+    invoice Number :RAZIN001
+
+-Enter / Adjest invoices 
+     <Actions...1>
+    -create Account --------> Final post -----> ok 
+
+
+13.General ledger ------> journals ------> Enter 
+     journal : Oct-26% ------> tab 
+     <find>
+   
+     
+           
+                 
+
+
+
+  
+     
+     
