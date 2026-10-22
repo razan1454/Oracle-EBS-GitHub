@@ -1,0 +1,46 @@
+Step 1: Create the data model
+   1.Sign in, then go to Navigator → Tools → Reports and Analytics → Browse Catalog.
+   2.Click Create → Data Model.
+   3.In the left tree, select Data Sets and click + → OTBI. This is the data set type that lets you pick columns instead of typing SQL.
+
+
+
+Step 2: Pick the subject area and columns
+  1.Select the Subject Area that holds your data, for example a Procurement or Payables one, and click Next.
+  2.Expand the folders and drag the columns you need into Selected Columns, for example Supplier Name and Business Unit.
+  3.Click Next.
+
+
+Step 3: Add the filter that becomes the parameter
+  1.On the filter page, add a filter on the column you want users to choose, for example Business Unit.
+  2.Set the Operator to is prompted.
+  3.Click Next through the remaining pages, then Finish. Name the data set, such as DS_SUPPLIER.
+
+
+Step 4: Check the generated parameter
+   1.In the left tree, open Parameters. A parameter for the prompted column should be listed.
+   2.Open it and set:
+       -Display Label: Business Unit
+       -Parameter Type: Menu, so users choose from a list
+       -Multiple Selection and Can Select All, if needed
+3.Attach a List of Values to the parameter. Open List of Values, click +, and create the LOV from the same subject area column. If your release only offers a SQL-based LOV type, that part is the one place a query is needed, and I can write it for you.
+4.Click OK.
+
+
+Step 5: Test the data model
+  1.Click Data at the top of the editor.
+  2.Choose a value from the drop-down and click View. Check that the rows match.
+  3.Click Save As Sample Data, then Save to /My Folders/RA.
+
+
+Step 6: Create the report
+  1.Click Create Report in the data model.
+  2.Select Use Report Editor, pick a Table layout, and click Finish.
+  3.Drag in the columns, then Save.
+
+
+Step 7: Run it
+  1.Open the report. The Business Unit drop-down appears at the top.
+  2.Choose a value and click Apply.
+  3.Check that the data changes, then use More → Permissions to share the report if needed.
+
