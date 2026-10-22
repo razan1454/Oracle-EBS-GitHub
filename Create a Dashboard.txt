@@ -1,0 +1,45 @@
+Step 1: Create the dashboard
+    1.Click Create → Dashboard. You can also use Navigator → Tools → Reports and Analytics → Create → Dashboard.
+    2.Enter a Name, such as SUPPLIER_DASHBOARD, and an optional description.
+    3.Choose where to save it. To make it appear in the Dashboards menu, save it under /My Folders/_portal (or /Shared Folders/.../_portal if you have access). A dashboard saved elsewhere still works but won’t show in the menu.
+    4.Leave Add content now ticked and click OK.
+
+
+
+Step 2: Add content to the page
+
+The Dashboard Builder opens with an empty page, named Page 1.
+
+ 1.In the Catalog pane on the left, find your analysis and drag it into the page area. You can also double-click it.
+ 2.To add a prompt, drag the dashboard prompt in above the analysis.
+ 3.From the Dashboard Objects list, you can also drag in:
+   -Column, to arrange items side by side
+    -Section, to group content
+      -Text, for titles or notes
+        -Link or Image, Embedded Content, and others.
+
+
+
+Step 3: Format each item
+    1.On each analysis, click the Properties icon (the wrench).
+    3.Choose options such as Show View, Report Links (Edit, Refresh, Print, Export), and Folded or Collapsible.
+    4.In the Page Properties (page tools menu), set the Page Name and style.
+
+
+Step 4: Add more pages (optional)
+    1.Click Add Page in the toolbar.
+    2.Name the page and repeat Step 2.
+
+
+
+Step 5: Save and view the dashboard
+    1.Click Save, then Run.
+    2.Choose values in the prompt, click Apply, and check that the analyses change.
+
+
+Step 6: Share and set permissions
+In the Catalog, open the dashboard’s More → Permissions.
+Give roles such as Authenticated User or a specific job role Open access. Users also need access to the underlying data and the analyses.
+
+
+
