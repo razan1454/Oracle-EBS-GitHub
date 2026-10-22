@@ -1,0 +1,43 @@
+1. Open the BI Publisher catalog
+    1.Sign in at that URL.
+    2.Open the Navigator (☰ menu), then Tools → Reports and Analytics.
+    3.Click the Browse Catalog icon. This opens the Catalog page you screenshotted.
+    4.Go to /My Folders/RA.
+
+
+
+2. Prepare the data model
+     1.Click Edit on DM_SUPPLIER_BURSTING.
+     2.Check that the data source is ApplicationDB_FSCM (the default for Fusion SQL).
+     3.Make sure the SQL returns one row per supplier. Include the split column (e.g. SUPPLIER_ID), the      name, and the email address.
+
+
+
+3. Create the bursting definition
+    1.In the data model, select Bursting in the left tree, then click +.
+    2.Set the Splitting Definition:
+       -Data Set: your main data set
+        -Delivery Key: the column that splits the output (e.g. SUPPLIER_ID)
+    3.Write the Delivery Query. It must return the columns KEY, TEMPLATE, LOCALE, OUTPUT_FORMAT,  DEL_CHANNEL, and PARAMETER1, PARAMETER2, and so on.
+    4.For DEL_CHANNEL = 'EMAIL', the parameters are usually the To address, CC, From, Subject, and Body, then the attachment flag. Check the exact order in the Oracle documentation for your release.
+    5.Make sure TEMPLATE matches your layout name exactly.
+    6.Save the data model.
+
+
+4. Check the report
+   -Click Edit on REPORT_SUPPLIER_BU.
+   -Confirm it uses DM_SUPPLIER_BURSTING.
+   -Confirm the layout name matches the TEMPLATE value in your bursting query.
+
+
+5. Check delivery settings
+Fusion cloud environments usually have email delivery configured already. If emails don’t go out, ask your administrator to check Administration → Delivery Configuration. In a demo environment, outbound email may be disabled, so you may need to burst to a FILE or FTP channel instead.
+
+
+6. Schedule it with bursting
+In the catalog, click More → Schedule on REPORT_SUPPLIER_BU.
+On the Output tab, tick Use Bursting Definition to Determine Output & Delivery Destinations.
+Click Submit.
+
+7. Verify
+Go to Tools → Scheduled Processes or Report Job History. Check that the job succeeded.
