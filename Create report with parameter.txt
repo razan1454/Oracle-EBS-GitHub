@@ -1,0 +1,59 @@
+Step 1: Create the data model
+   1.Sign in, then go to Navigator → Tools → Reports and Analytics → Browse Catalog.
+   2.Click Create → Data Model.
+   3.In the left tree, select Data Sets, click +, and choose OTBI.
+
+
+Step 2: Select the subject area and columns
+  1.Choose the Subject Area that holds your data and click Next.
+  2.Move the columns you need into Selected Columns, for example Supplier Name, Business Unit, and Creation Date.
+  3.Click Next.
+
+
+Step 3: Add the filter that becomes the parameter
+    1.Add a filter on the column you want users to choose, such as Business Unit or Creation Date.
+    2.Set the Operator to is prompted.
+    3.Click Next to the end, then Finish, and name the data set (for example DS_SUPPLIER).
+
+
+
+Step 4: Set up the parameter
+  1.In the left tree, open Parameters. The prompted column should be listed.
+  2.Open it and set:
+      -Display Label: the name users will see
+      -Data Type: String, Date, and so on
+      -Default Value: optional
+      -Parameter Type: Text for typed values, Date for a calendar, or Menu for a drop-down list
+3.Tick Multiple Selection or Can Select All if you need them.
+4.Click OK.
+
+
+Step 5: Test the data model
+    1.Click Data at the top of the editor.
+    2.Enter or select a parameter value and click View. Check that the rows match.
+    3.Click Save As Sample Data, then click Save and store it in /My Folders/RA.
+
+
+Step 6: Create the report
+   1.Click Create Report in the data model.
+   2.Select Use Report Editor, choose a layout such as Table, and click Finish.
+   3.Drag the columns into the layout and format them.
+   4.Click Save and store the report in /My Folders/RA.
+
+
+Step 7: Run and check the parameter
+   1.Open the report. The parameter appears at the top of the page.
+   2.Enter or choose a value and click Apply.
+   3.Check that the output changes with your selection.
+   4.Use More → Permissions on the report if other users need access.
+
+
+
+
+
+
+
+
+
+
+
