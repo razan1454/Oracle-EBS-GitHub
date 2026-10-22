@@ -1,0 +1,39 @@
+Step 1: Start a new analysis
+   1.In the Catalog page from your screenshot, click Create → Analysis. Or go to Navigator → Tools → Reports and Analytics → Create → Analysis.
+   2.Pick the Subject Area that holds your data, for example a Procurement or Payables subject area, and click Continue.
+
+
+Step 2: Choose the columns
+   1.On the Criteria tab, expand the folders on the left.
+   2.Double-click the columns you want in the report, for example Supplier Name, Business Unit, Invoice Number, and Amount.
+
+
+
+Step 3: Add a filter that will become the prompt
+   1.In the Filters pane, click the Filter icon, or hover over a column and click More Options → Filter.
+   2.Choose the column to prompt on, for example Business Unit.
+   3.In the New Filter dialog, set Operator to is prompted.
+   4.Click OK.
+
+
+Step 4: Build the prompt (choose one)
+
+Option A: Column prompt inside the analysis
+
+    1.Open the Prompts tab.
+    2.Click the New icon and select Column Prompt.
+    3.Select the column, for example Business Unit.
+    4.Set the label, the operator (is equal to / is in), and the User Input type (Choice List or Drop-down list).
+    5.Optionally set a Default Selection and enable Allow multiple selection.
+    6.Click OK.
+
+
+
+Step 5: Format and check the results
+   1.Open the Results tab and choose a view (Table, Pivot Table, Chart).
+   2.The prompt should appear at the top. Choose a value and click Apply.
+   3.Check that the data changes with your selection.
+
+Step 6: Save
+  1.Click Save (the disk icon).
+  2.Save to /My Folders/RA
