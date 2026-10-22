@@ -1,0 +1,37 @@
+Step 1: Save the analysis first
+    1.Build the analysis as in the previous steps and save it, for example to /My Folders/RA/ANALYTICS. I can see an ANALYTICS item in your catalog.
+    2.Check that it returns data when you run it.
+    3.If the analysis has an is prompted filter, note the column name, because it becomes a data model parameter later.
+
+
+Step 2: Create the data model
+   1.In the Catalog, click Create → Data Model. Or go to Navigator → Tools → Reports and Analytics → Create → Data Model.
+   2.In the data model editor, click Data Sets in the left tree, then the + (New Data Set) icon.  
+
+
+
+Step 3: Add the analysis as a data set
+
+Option A: Oracle BI Analysis data set
+
+1.Choose Oracle BI Analysis as the type, if your release offers it.
+2.Enter a Name, such as DS_ANALYSIS.
+3.Browse the catalog and select your saved analysis (/My Folders/RA/ANALYTICS).
+4.Click OK.
+
+
+Step 4: Check the data
+Click Data at the top of the editor.
+Click View.
+Click Save As Sample Data.
+
+
+Step 5: Add parameters (if the analysis has prompts)
+    1.Click Parameters in the left tree, then +.
+    2.Create a parameter for the prompted column, with the type (Text or Date) and a default.
+    3.If it should offer a choice list, create a List of Values first and attach it to the parameter.
+    4.Make sure the parameter name matches the is prompted filter, otherwise the prompt value won’t filter the data.
+
+Step 6: Save and use the data model
+  1.Click Save, and choose /My Folders/RA and a name.
+  2.Click Create Report from the data model to build a layout.
