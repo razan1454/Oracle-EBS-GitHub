@@ -1,0 +1,28 @@
+Step 1: Confirm the user has the job role
+    1.Go to Navigator → Tools → Security Console.
+    2.Open the Users tab and search for your username.
+    3.Check that the required role is listed under the user’s roles. If it isn’t, click Edit, then Add Role, select the role, and save.
+
+
+Step 2: Open the data access task
+    1.Go to Navigator → My Enterprise → Setup and Maintenance.
+   2.Search for the task Manage Data Access for Users and open it.
+
+
+Step 3: Add the data access
+    1.Search for your User Name and click Search.
+    2.In the results, click + Create (the plus icon).
+    3.Fill in the row: 
+
+  -User Name: your user
+  -Role: the job or data role from your assignment
+  -Security Context: the type, such as Business Unit, Ledger, or Legal Entity
+  -Security Context Value: the specific item from your assignment, such as the BU name
+
+4.Add one row for each role and context combination you need.
+5.Click Save and Close.
+
+
+
+
+
